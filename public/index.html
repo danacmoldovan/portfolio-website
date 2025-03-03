@@ -14,5 +14,22 @@
 </head>
 
 <body>
+	<div id="changeableText" style="border: 1px solid black; padding: 20px; width: 300px; text-align: center; cursor: pointer;">
+    Click me to change this text!
+</div>
+
+<script>
+    // Get the text box element
+    const textBox = document.getElementById("changeableText");
+    
+    // Add a click event listener
+    textBox.addEventListener("click", function() {
+        // Change the text when clicked
+        this.innerHTML = "The text has been changed!";
+        
+        // You can also change colors or other styles
+        this.style.backgroundColor = "#f0f0f0";
+    });
+</script>
 </body>
 </html>
