@@ -1,5 +1,8 @@
 # portfolio-website
 
+## Requirements
+
+- [NodeJs](https://nodejs.org/en)
 
 ```bash
 # Install dependencies
