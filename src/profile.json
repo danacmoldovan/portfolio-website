@@ -1,0 +1,19 @@
+{
+  "hash": "8b99c1a83b3276520b9625b2bf111c9e85930a704aa1adf33a94f28f8225dbc3",
+  "displayName": "Dana Moldovan",
+  "description": "Hello world.",
+ "accounts": [
+    {
+      "url": "https://instagram.com/dana.c.moldovan",
+      "iconUrl": "https://secure.gravatar.com/icons/instagram.svg",
+      "username": "dana.c.moldovan",
+      "name": "Instagram"
+    },
+    {
+      "url": "https://www.linkedin.com/in/dana-moldovan/",
+      "iconUrl": "https://secure.gravatar.com/icons/linkedin.svg",
+      "username": "dana-moldovan",
+      "name": "LinkedIn"
+    }
+  ]
+}

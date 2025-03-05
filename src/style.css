@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 50px;
+    text-align: center;
+}
+
+header, footer {
+    background-color: #f8f9fa;
+}
+
+#content {
+    padding-top: 10vh;
+}
+
+#type {
+    color: darkred;
+    font-weight: bold;
+}
+
+#cursor {
+    font-size: 1.5em;
+    color: darkred;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
