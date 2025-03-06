@@ -11,6 +11,8 @@ npm install
 # Run development server
 npm run start
 
+# stop with CTRL+C
+
 # Build for production
 npm run build
 ```
