@@ -2,15 +2,29 @@ body {
     font-family: Avenir, sans-serif;
     padding: 5vh 10vh 5vh 10vh;
     /* text-align: center; */
-    font-size: 32px;
+    font-size: 24px;
 }
 
 header {
     background-color: #fdf7f7;
-    padding: 0vh;
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+    padding-left: 4vh;
     text-align: left;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: semi-bold;
+}
+
+header .highlight {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkred;
+}
+
+section h2 {
+    font-size: 28px; /* Change the font size */
+    font-weight: bold; /* Change the font weight */
+    margin-bottom: 20px; /* Adjust the margin */
 }
 
 footer {
@@ -27,19 +41,40 @@ footer {
     padding-top: 10vh;
 }
 
+
 #menu {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the menu vertically */
-    padding-left: 20px;
+    padding-left: 40px;
     position: sticky;
-    top: 0; /* This ensures the menu sticks to the top of the viewport */
-    height: 100vh; /* Ensure the menu takes the full height of the viewport */
+    top: 40px; /*This ensures the menu sticks to the top of the viewport */
+    height: 100vh; /*Ensure the menu takes the full height of the viewport */
 }
 
 #menu-prev, #menu-next {
     flex: 1;
+}
+
+#menu-prev ul a {
+    text-decoration: none;
+    color: gray;
+    font-size: 18px;
+}
+
+#menu-prev ul li a:hover {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: darkred;
+}
+
+#menu-next ul a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: darkred;
 }
 
 #menu ul {
@@ -62,6 +97,14 @@ footer {
     font-weight: bold;
 }
 
+#menu-prev ul li a {
+    color: gray;
+}
+#menu-next ul li a {
+    color: darkred;
+    /* font-weight: bold; */
+}
+
 #type {
     color: darkred;
     font-weight: bold;
@@ -82,7 +125,11 @@ footer {
     }
 }
 
-#about, #projects, #skills, #contact, #blog {
+.active-section h2 {
+    color: darkred;
+}
+
+#The spark, #The leap, #Learning the craft, #Finding my place, #Mastering complexity, #The road ahead {
     padding: 20px;
     margin-top: 10px;
     border: none;
@@ -90,12 +137,12 @@ footer {
     background-color: #f9f9f9;
 }
 
-#about h2, #projects h2, #skills h2, #contact h2, #blog h2 {
+#The spark h2, #The leap h2, #Learning the craft h2, #Finding my place h2, #Mastering complexity h2, #The road ahead h2 {
     font-size: 24px;
     margin-bottom: 0px;
 }
 
-#about p, #projects p, #skills p, #contact p, #blog p {
+#The spark p, #The leap p, #Learning the craft p, #Finding my place p, #Mastering complexity p, #The road ahead p {
     font-size: 18px;
     line-height: 1.6;
 }
