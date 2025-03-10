@@ -10,16 +10,116 @@
 
 <body>
   <header>
-  <div> 
     <p>Hi, I'm Dana, a human product designer.</p>
-  </div>
-  </header>
-  <div id="content">
     <div id="intro">
       <p>This is a space where I share <span id="type"></span><span id="cursor">|</span></p>
-      <p>In a world where we can do anything, let's not do everything.</p>
+    </div>
+  </header>
+  <div id="container">
+    <div id="content">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Information about Dana Moldovan.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Nullam ac erat ante. Sed sit amet sapien ut libero venenatis faucibus.
+          Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
+          nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis
+          gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+          nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum
+          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
+          lacinia.</p>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>Details about various projects.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Nullam ac erat ante. Sed sit amet sapien ut libero venenatis faucibus.
+          Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
+          nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis
+          gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+          nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum
+          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
+          lacinia.</p>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <p>List of skills and expertise.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Nullam ac erat ante. Sed sit amet sapien ut libero venenatis faucibus.
+          Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
+          nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis
+          gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+          nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum
+          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
+          lacinia.</p>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact information and form.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Nullam ac erat ante. Sed sit amet sapien ut libero venenatis faucibus.
+          Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
+          nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis
+          gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+          nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum
+          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
+          lacinia.</p>
+      </section>
+      <section id="blog">
+        <h2>Blog</h2>
+        <p>Latest blog posts and articles.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Nullam ac erat ante. Sed sit amet sapien ut libero venenatis faucibus.
+          Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
+          nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis
+          gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+          nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum
+          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
+          lacinia.</p>
+      </section>
+    </div>
+    <div id="menu">
+      <div id="menu-prev">
+        <ul></ul>
+      </div>
+      <div id="menu-next">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      const menuPrev = document.querySelector('#menu-prev ul');
+      const menuNext = document.querySelector('#menu-next ul');
+      const menuItems = Array.from(menuNext.querySelectorAll('li'));
+
+      function activateMenuItem() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+        menuItems.forEach((item, i) => {
+          item.style.display = i === index ? 'none' : 'block';
+        });
+
+        menuPrev.innerHTML = '';
+        menuNext.innerHTML = '';
+
+        menuItems.slice(0, index).forEach(item => menuPrev.appendChild(item.cloneNode(true)));
+        menuItems.slice(index + 1).forEach(item => menuNext.appendChild(item.cloneNode(true)));
+      }
+
+      activateMenuItem();
+      window.addEventListener('scroll', activateMenuItem);
+    });
+  </script>
 </body>
 
 </html>

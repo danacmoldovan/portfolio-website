@@ -1,20 +1,65 @@
 body {
     font-family: Avenir, sans-serif;
     padding: 5vh 10vh 5vh 10vh;
-    text-align: center; 
+    /* text-align: center; */
     font-size: 32px;
 }
 
-header, footer {
+header {
     background-color: #fdf7f7;
-    padding: 10vh 10vh 5vh 10vh;
+    padding: 0vh;
     text-align: left;
     font-size: 24px;
     font-weight: semi-bold;
 }
 
+footer {
+    margin-bottom: 10vh;
+}
+
+#container {
+    display: flex; 
+    justify-content: space-between; 
+}
+
 #content {
+    flex: 3;
     padding-top: 10vh;
+}
+
+#menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the menu vertically */
+    padding-left: 20px;
+    position: sticky;
+    top: 0; /* This ensures the menu sticks to the top of the viewport */
+    height: 100vh; /* Ensure the menu takes the full height of the viewport */
+}
+
+#menu-prev, #menu-next {
+    flex: 1;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin-bottom: 20px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+#menu ul li a.active {
+    color: red;
+    font-weight: bold;
 }
 
 #type {
@@ -35,4 +80,22 @@ header, footer {
     50% {
         color: black;
     }
+}
+
+#about, #projects, #skills, #contact, #blog {
+    padding: 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#about h2, #projects h2, #skills h2, #contact h2, #blog h2 {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+#about p, #projects p, #skills p, #contact p, #blog p {
+    font-size: 18px;
+    line-height: 1.6;
 }
