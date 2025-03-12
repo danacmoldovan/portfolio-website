@@ -30,9 +30,10 @@ function parseSections() {
 
       // Set the ID on the section element if it doesn't have one
       if (!section.id) {
-        // Using DOM API to set ID to avoid linter warning
         section.setAttribute('id', id);
       }
+
+      section.classList.add('faded');
 
       // Calculate active position
       const activePosition = getActivePositionForSection(heading);
@@ -53,6 +54,13 @@ function parseSections() {
   return parsedSections;
 }
 
+function scrollTo(targetPosition) {
+  window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth',
+  });
+}
+
 function initSmoothScrolling() {
   // Add smooth scrolling for anchor links
   document.querySelectorAll('#menu a').forEach((anchor) => {
@@ -68,10 +76,7 @@ function initSmoothScrolling() {
         : getActivePositionForSection(targetElement);
 
       if (targetElement) {
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-        });
+        scrollTo(targetPosition);
       }
     });
   });
@@ -136,6 +141,7 @@ function changeActiveSection(currentlyActiveSection, idOfSectionThatShouldBeActi
   if (sectionThatShouldBeActive) {
     sectionThatShouldBeActive.classList.add('active');
     sectionThatShouldBeActive.classList.remove('faded');
+    sectionThatShouldBeActive.classList.remove('invisible');
     console.log('Activated section:', idOfSectionThatShouldBeActive);
   }
 
@@ -178,6 +184,10 @@ function buildMenu() {
 
   // Add menu items for each section
   sections.forEach((section) => {
+    if (section.heading.textContent === 'Me' || section.heading.classList.contains('invisible')) {
+      return;
+    }
+
     // Create list item
     const listItem = document.createElement('li');
     listItem.id = section.menuItemId;
@@ -199,21 +209,9 @@ function buildMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Add CSS for faded sections
-  const style = document.createElement('style');
-  style.textContent = `
-    section {
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-    section.faded {
-      opacity: 0.3;
-    }
-  `;
-  document.head.appendChild(style);
-
   sections.push(...parseSections());
   buildMenu();
+  scrollTo(sections[0].activePosition);
   typeAnimation();
   initSmoothScrolling();
 
