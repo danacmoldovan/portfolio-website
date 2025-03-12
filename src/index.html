@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dana Moldovan</title>
   <link rel="stylesheet" href="style.css">
-  <script src="js/smoothScrolling.js"></script>
-  <script src="js/menu.js"></script>
 </head>
 
 <body>
@@ -31,7 +29,7 @@
           ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
           lacinia.</p>
       </section>
-      <section id="The leap">
+      <section id="leap">
         <h2>The leap</h2>
         <p>My decision to pivot into product design, the challenges I faced, and what motivated me to keep striving for
           a role in the field.</p>
@@ -44,7 +42,7 @@
           ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
           lacinia.</p>
       </section>
-      <section id="Learning the craft">
+      <section id="craft">
         <h2>Learning the craft</h2>
         <p>The steps I took to build my skills—courses, hands-on projects, mentors, or early experiences that shaped
           your approach.</p>
@@ -57,7 +55,7 @@
           ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
           lacinia.</p>
       </section>
-      <section id="Finding my place">
+      <section id="place">
         <h2>Finding my place</h2>
         <p>Landing a role at UiPath and learning how to design for complex, enterprise-scale applications.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
@@ -69,7 +67,7 @@
           ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
           lacinia.</p>
       </section>
-      <section id="Mastering complexity">
+      <section id="complexity">
         <h2>Mastering complexity</h2>
         <p>Refining my ability to simplify intricate workflows, focusing on usability, and creating impactful
           experiences.</p>
@@ -82,7 +80,7 @@
           ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
           lacinia.</p>
       </section>
-      <section id="The road ahead">
+      <section id="road">
         <h2>The road ahead</h2>
         <p>Where I am now and what excites me about the future - deepening expertise, exploring new design challenges,
           or making an even bigger impact with the help of AI.</p>
@@ -103,11 +101,11 @@
       <div id="menu-next">
         <ul>
           <li><a href="#spark">The spark</a></li>
-          <li><a href="#The leap">The leap</a></li>
-          <li><a href="#Learning the craft">Learning the craft</a></li>
-          <li><a href="#Finding my place">Finding my place</a></li>
-          <li><a href="#Mastering complexity">Mastering complexity</a></li>
-          <li><a href="#The road ahead">The road ahead</a></li>
+          <li><a href="#leap">The leap</a></li>
+          <li><a href="#craft">Learning the craft</a></li>
+          <li><a href="#place">Finding my place</a></li>
+          <li><a href="#complexity">Mastering complexity</a></li>
+          <li><a href="#road">The road ahead</a></li>
         </ul>
       </div>
     </div>
@@ -116,6 +114,61 @@
   <footer>
     <p>© 2025 Dana Moldovan</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const offset = 350;
+
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        console.log(anchor);
+        anchor.addEventListener('click', function (e) {
+          console.log('smooth scrolling');
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          console.log(targetElement);
+
+          if (targetElement) {
+            console.log(targetElement.offsetTop);
+            window.scrollTo({
+              top: targetElement.offsetTop - offset, // Offset by 100px to account for spacing
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      const sections = document.querySelectorAll('section');
+      const menuPrev = document.querySelector('#menu-prev ul');
+      const menuNext = document.querySelector('#menu-next ul');
+      const menuItems = Array.from(menuNext.querySelectorAll('li'));
+
+      function activateMenuItem() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + offset < sections[index].offsetTop) { }
+
+        menuItems.forEach((item, i) => {
+          item.style.display = i === index ? 'none' : 'block';
+        });
+
+        sections.forEach((section, i) => {
+          section.classList.toggle('active-section', i === index);
+        });
+
+        menuPrev.innerHTML = '';
+        menuNext.innerHTML = '';
+
+        menuItems.slice(0, index).forEach(item => menuPrev.appendChild(item.cloneNode(true)));
+        menuItems.slice(index + 1).forEach(item => menuNext.appendChild(item.cloneNode(true)));
+      }
+
+      activateMenuItem();
+      window.addEventListener('scroll', activateMenuItem);
+    });
+  </script>
 </body>
 
 </html>
