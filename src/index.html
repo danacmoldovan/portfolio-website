@@ -16,8 +16,6 @@
     </div>
   </header>
   <div id="container">
-    <div id="spacer">
-    </div>
     <div id="content">
       <section id="spark">
         <h2>The spark</h2>
@@ -121,6 +119,23 @@
   const menuItems = Array.from(menuNext.querySelectorAll('li'));
   const offset = 350; 
 
+  // Add smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Offset by 100px to account for spacing
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
   function activateMenuItem() {
     let index = sections.length;
 
@@ -133,8 +148,6 @@
     sections.forEach((section, i) => {
       section.classList.toggle('active-section', i === index);
     });
-
-
 
     menuPrev.innerHTML = '';
     menuNext.innerHTML = '';

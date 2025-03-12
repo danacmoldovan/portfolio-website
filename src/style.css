@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+}
+
 body {
     font-family: Avenir, sans-serif;
     padding: 5vh 10vh 5vh 10vh;
@@ -11,7 +15,7 @@ header {
     padding-bottom: 10vh;
     padding-left: 4vh;
     text-align: left;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: semi-bold;
 }
 
@@ -30,18 +34,17 @@ footer {
 
 #container {
     display: flex;
-    align-items: center; /* Center the container vertically */
-    width: 100%;    
+    align-items: flex-start;
+    position: relative;
+    width: 60%;
+    border: 1px dotted red;
 }
 
 #content {
-    width: 50%; /* Set the content width to 50% of the page */
+    /* width: 50%;  */
     padding-top: 4vh;
-}
-
-#spacer {
-    width: 20%; /* Set the new column width to 45% of the container */
-    padding-top: 4vh;
+    margin-right: 40%;
+    border: 1px dotted blue;
 }
 
 section {
@@ -49,58 +52,42 @@ section {
     margin-top: 10vh;
     border: none;
     border-radius: 10px;
-    /* background-color: #f9f9f9; */
 }
 
 section p {
-    font-size: 18px;
+    font-size: 0.9em;
     line-height: 1.6;
+    text-align: justify;
 }
 
 section h2 {
-    font-size: 24px;
+    font-size: 1.5em;
     margin-bottom: 0px;
+
 }
 
 .active-section h2 {
     color: darkred;
+    font-size: 2em;
 }
+
+/* Menu */
 
 #menu {
-    flex: 1;
+    border: 1px dotted yellow;
+    flex: none; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align the menu to the top */
+    justify-content: center; /* Center the menu vertically */
     text-align: left;
-    padding-left: 80px;
-    width: 40%;
-    position: sticky;
-    top: 40px; /*This ensures the menu sticks to the top of the viewport */
-    height: 100vh; /*Ensure the menu takes the full height of the viewport */
-}
-
-#menu-prev, #menu-next {
-    flex: 1;
-}
-
-#menu-prev ul a {
-    text-decoration: none;
-    color: gray;
-    font-size: 18px;
-}
-
-#menu-prev ul li a:hover {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: darkred;
-}
-
-#menu-next ul a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: darkred;
+    padding-left: 40px; /* Reduce left padding */
+    width: 30%; /* Reduce width from 40% to 30% */
+    position: fixed; /* Keep fixed positioning */
+    top: 50%; /* Keep vertical centering */
+    right: 5%; /* Adjust right position */
+    transform: translateY(-50%); /* Keep vertical centering */
+    height: auto; /* Keep auto height */
+    z-index: 100; /* Keep z-index */
 }
 
 #menu ul {
@@ -114,22 +101,24 @@ section h2 {
 
 #menu ul li a {
     text-decoration: none;
-    color: #000;
-    font-size: 18px;
+    font-size: 2em;
 }
 
-#menu ul li a.active {
-    color: red;
-    font-weight: bold;
+#menu-prev {
+    margin-bottom: 10vh;
+    color: black;
 }
 
-#menu-prev ul li a {
+#menu-prev ul a {
+    text-decoration: none;
     color: gray;
 }
+
 #menu-next ul li a {
     color: darkred;
-    /* font-weight: bold; */
 }
+
+/* Cursor */
 
 #type {
     color: darkred;
