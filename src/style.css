@@ -8,6 +8,7 @@
     
     /* Font variables */
     --font-primary: Avenir, sans-serif;
+    
 }
 
 .invisible {
@@ -16,17 +17,11 @@
 
 body {
     font-family: var(--font-primary);
+    font-size: 26px;
     padding: 5vh 10vh 5vh 10vh;
     text-align: left;
-    font-size: 24px;
     color: var(--color-text);
     background-color: var(--color-background);
-}
-
-header .highlight {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--color-accent);
 }
 
 #container {
@@ -48,6 +43,7 @@ header .highlight {
 }
 
 section {
+    font-size: 1.2rem;
     padding: 20px;
     margin-top: 10vh;
     /* text-align: justify; */
@@ -59,7 +55,7 @@ section {
 section:nth-of-type(1) {
     padding-top: 30vh;
     padding-bottom: 20vh;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: left;
 }
 
@@ -73,19 +69,17 @@ section.faded {
 }
 
 section p {
-    font-size: 0.9em;
     line-height: 1.6;
 }
 
 section h2 {
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 0;
     /* text-decoration: underline; */
 }
 
 section.active h2 {
     color: var(--color-accent);
-    font-size: 2em;
 }
 
 /* Menu */
@@ -119,7 +113,7 @@ section.active h2 {
 #menu ul li a {
     text-decoration: none;
     color: var(--color-text-muted);
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 #menu li.active a {
