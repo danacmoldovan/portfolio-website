@@ -71,7 +71,7 @@ section {
     padding: 20px;
     margin-top: 10vh;
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
     /* border: 1px dotted green; */
 }
 
@@ -126,24 +126,25 @@ section.active h2 {
 
 #menu ul li a {
     text-decoration: none;
+    color: var(--color-text-muted);
     font-size: 2em;
 }
 
 #menu li.active a {
     opacity: 0;
+    transition: opacity 1s ease;
 }
 
 #menu li.prev a {
     color: var(--color-text-muted);
-}
-
-#menu-prev ul a {
-    text-decoration: none;
-    color: var(--color-text-muted);
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
 #menu li.next a {
     color: var(--color-accent);
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
 /* Cursor */
