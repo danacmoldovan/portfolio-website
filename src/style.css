@@ -1,7 +1,7 @@
 body {
     font-family: Avenir, sans-serif;
     padding: 5vh 10vh 5vh 10vh;
-    /* text-align: center; */
+    text-align: left;
     font-size: 24px;
 }
 
@@ -21,33 +21,59 @@ header .highlight {
     color: darkred;
 }
 
-section h2 {
-    font-size: 28px; /* Change the font size */
-    font-weight: bold; /* Change the font weight */
-    margin-bottom: 20px; /* Adjust the margin */
-}
-
 footer {
-    margin-bottom: 10vh;
+    margin-bottom: 60vh;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 0.7em;
 }
 
 #container {
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    align-items: center; /* Center the container vertically */
+    width: 100%;    
 }
 
 #content {
-    flex: 3;
-    padding-top: 10vh;
+    width: 50%; /* Set the content width to 50% of the page */
+    padding-top: 4vh;
 }
 
+#spacer {
+    width: 20%; /* Set the new column width to 45% of the container */
+    padding-top: 4vh;
+}
+
+section {
+    padding: 20px;
+    margin-top: 10vh;
+    border: none;
+    border-radius: 10px;
+    /* background-color: #f9f9f9; */
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.active-section h2 {
+    color: darkred;
+}
 
 #menu {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the menu vertically */
-    padding-left: 40px;
+    justify-content: flex-start; /* Align the menu to the top */
+    text-align: left;
+    padding-left: 80px;
+    width: 40%;
     position: sticky;
     top: 40px; /*This ensures the menu sticks to the top of the viewport */
     height: 100vh; /*Ensure the menu takes the full height of the viewport */
@@ -123,26 +149,4 @@ footer {
     50% {
         color: black;
     }
-}
-
-.active-section h2 {
-    color: darkred;
-}
-
-#The spark, #The leap, #Learning the craft, #Finding my place, #Mastering complexity, #The road ahead {
-    padding: 20px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-}
-
-#The spark h2, #The leap h2, #Learning the craft h2, #Finding my place h2, #Mastering complexity h2, #The road ahead h2 {
-    font-size: 24px;
-    margin-bottom: 0px;
-}
-
-#The spark p, #The leap p, #Learning the craft p, #Finding my place p, #Mastering complexity p, #The road ahead p {
-    font-size: 18px;
-    line-height: 1.6;
 }

@@ -16,8 +16,10 @@
     </div>
   </header>
   <div id="container">
+    <div id="spacer">
+    </div>
     <div id="content">
-      <section id="The spark">
+      <section id="spark">
         <h2>The spark</h2>
         <p>How I first became interested in design, through problem-solving, and a creative passion.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
@@ -96,7 +98,7 @@
       </div>
       <div id="menu-next">
         <ul>
-          <li><a href="#The spark">The spark</a></li>
+          <li><a href="#spark">The spark</a></li>
           <li><a href="#The leap">The leap</a></li>
           <li><a href="#Learning the craft">Learning the craft</a></li>
           <li><a href="#Finding my place">Finding my place</a></li>
@@ -106,18 +108,23 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    <p>© 2025 Dana Moldovan</p>
+  </footer>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('section');
   const menuPrev = document.querySelector('#menu-prev ul');
   const menuNext = document.querySelector('#menu-next ul');
   const menuItems = Array.from(menuNext.querySelectorAll('li'));
-  // const offset = 150; 
+  const offset = 350; 
 
   function activateMenuItem() {
     let index = sections.length;
 
-    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    while (--index && window.scrollY + offset < sections[index].offsetTop) {}
 
     menuItems.forEach((item, i) => {
       item.style.display = i === index ? 'none' : 'block';
@@ -140,6 +147,7 @@
   window.addEventListener('scroll', activateMenuItem);
 });
   </script>
+
 </body>
 
 </html>
