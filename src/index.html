@@ -94,80 +94,13 @@
       </section>
     </div>
     <div id="menu">
-      <div id="menu-prev">
-        <ul></ul>
-      </div>
-      <div id="menu-next">
-        <ul>
-          <li><a href="#spark">The spark</a></li>
-          <li><a href="#leap">The leap</a></li>
-          <li><a href="#craft">Learning the craft</a></li>
-          <li><a href="#place">Finding my place</a></li>
-          <li><a href="#complexity">Mastering complexity</a></li>
-          <li><a href="#road">The road ahead</a></li>
-        </ul>
-      </div>
+      
     </div>
   </div>
 
   <footer>
     <p>© 2025 Dana Moldovan</p>
   </footer>
-
-  <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //   const offset = 350;
-
-    //   // Add smooth scrolling for anchor links
-    //   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //     console.log(anchor);
-    //     anchor.addEventListener('click', function (e) {
-    //       console.log('smooth scrolling');
-    //       e.preventDefault();
-
-    //       const targetId = this.getAttribute('href');
-    //       const targetElement = document.querySelector(targetId);
-    //       console.log(targetElement);
-
-    //       if (targetElement) {
-    //         console.log(targetElement.offsetTop);
-    //         window.scrollTo({
-    //           top: targetElement.offsetTop - offset, // Offset by 100px to account for spacing
-    //           behavior: 'smooth'
-    //         });
-    //       }
-    //     });
-    //   });
-
-    //   const sections = document.querySelectorAll('section');
-    //   const menuPrev = document.querySelector('#menu-prev ul');
-    //   const menuNext = document.querySelector('#menu-next ul');
-    //   const menuItems = Array.from(menuNext.querySelectorAll('li'));
-
-    //   function activateMenuItem() {
-    //     let index = sections.length;
-
-    //     while (--index && window.scrollY + offset < sections[index].offsetTop) { }
-
-    //     menuItems.forEach((item, i) => {
-    //       item.style.display = i === index ? 'none' : 'block';
-    //     });
-
-    //     sections.forEach((section, i) => {
-    //       section.classList.toggle('active-section', i === index);
-    //     });
-
-    //     menuPrev.innerHTML = '';
-    //     menuNext.innerHTML = '';
-
-    //     menuItems.slice(0, index).forEach(item => menuPrev.appendChild(item.cloneNode(true)));
-    //     menuItems.slice(index + 1).forEach(item => menuNext.appendChild(item.cloneNode(true)));
-    //   }
-
-    //   activateMenuItem();
-    //   window.addEventListener('scroll', activateMenuItem);
-    // });
-  </script>
 </body>
 
 </html>

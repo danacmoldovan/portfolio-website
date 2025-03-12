@@ -57,21 +57,26 @@ footer {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
 }
 
 #content {
     width: 60%;
     padding-top: 4vh;
     padding-right: 5%;
-    border: 1px dotted red;
+    /* border: 1px dotted red; */
 }
 
 section {
     padding: 20px;
     margin-top: 10vh;
-    border: none;
-    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    /* border: 1px dotted green; */
+}
+
+section.faded {
+    opacity: 0.1;
 }
 
 section p {
@@ -81,12 +86,12 @@ section p {
 }
 
 section h2 {
-    font-size: 1.5em;
-    margin-bottom: 0px;
-
+    font-size: 2em;
+    margin-bottom: 0;
+    /* text-decoration: underline; */
 }
 
-.active-section h2 {
+section.active h2 {
     color: var(--color-accent);
     font-size: 2em;
 }
@@ -94,7 +99,7 @@ section h2 {
 /* Menu */
 
 #menu {
-    border: 1px dotted orange;
+    /* border: 1px dotted orange; */
     width: 30%;
     flex: none; 
     display: flex;
@@ -112,11 +117,11 @@ section h2 {
 
 #menu ul {
     list-style-type: none;
-    padding: 0;
 }
 
 #menu ul li {
-    margin-bottom: 20px;
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
 }
 
 #menu ul li a {
@@ -124,9 +129,12 @@ section h2 {
     font-size: 2em;
 }
 
-#menu-prev {
-    margin-bottom: 10vh;
-    color: var(--color-text);
+#menu li.active a {
+    opacity: 0;
+}
+
+#menu li.prev a {
+    color: var(--color-text-muted);
 }
 
 #menu-prev ul a {
@@ -134,7 +142,7 @@ section h2 {
     color: var(--color-text-muted);
 }
 
-#menu-next ul li a {
+#menu li.next a {
     color: var(--color-accent);
 }
 
