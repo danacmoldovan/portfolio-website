@@ -50,16 +50,17 @@ header .highlight {
 section {
     padding: 20px;
     margin-top: 10vh;
+    text-align: justify;
     opacity: 1;
     transition: opacity 1s ease;
-    border: 1px dotted green;
+    /* border: 1px dotted green; */
 }
 
 section:nth-of-type(1) {
     padding-top: 30vh;
     padding-bottom: 20vh;
-    /* margin-top: 40vh; */
-    /* transform: translateY(-50%); */
+    font-size: 1.7em;
+    text-align: left;
 }
 
 section:nth-last-of-type(1) {
@@ -74,7 +75,6 @@ section.faded {
 section p {
     font-size: 0.9em;
     line-height: 1.6;
-    text-align: justify;
 }
 
 section h2 {
@@ -147,7 +147,7 @@ section.active h2 {
 }
 
 #cursor {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
     color: var(--color-accent);
     animation: 1s blink step-end infinite;
 }
