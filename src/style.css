@@ -1,16 +1,34 @@
+:root {
+    /* Color variables */
+    --color-text: #333333;
+    --color-accent: darkred;
+    --color-accent-light: #fdf7f7;
+    --color-background: white;
+    --color-text-muted: gray;
+    
+    /* Font variables */
+    --font-primary: Avenir, sans-serif;
+    
+    /* Spacing variables */
+    --spacing-standard: 20px;
+    --spacing-large: 40px;
+}
+
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Avenir, sans-serif;
+    font-family: var(--font-primary);
     padding: 5vh 10vh 5vh 10vh;
     text-align: left;
     font-size: 24px;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 header {
-    background-color: #fdf7f7;
+    background-color: var(--color-accent-light);
     padding-top: 20vh;
     padding-bottom: 10vh;
     padding-left: 4vh;
@@ -22,7 +40,7 @@ header {
 header .highlight {
     font-size: 20px;
     font-weight: bold;
-    color: darkred;
+    color: var(--color-accent);
 }
 
 footer {
@@ -34,17 +52,20 @@ footer {
 
 #container {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    width: 60%;
-    border: 1px dotted red;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 1px dotted blue;
 }
 
 #content {
-    /* width: 50%;  */
+    width: 60%;
     padding-top: 4vh;
-    margin-right: 40%;
-    border: 1px dotted blue;
+    padding-right: 5%;
+    border: 1px dotted red;
 }
 
 section {
@@ -67,27 +88,27 @@ section h2 {
 }
 
 .active-section h2 {
-    color: darkred;
+    color: var(--color-accent);
     font-size: 2em;
 }
 
 /* Menu */
 
 #menu {
-    border: 1px dotted yellow;
+    border: 1px dotted orange;
+    width: 30%;
     flex: none; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the menu vertically */
+    justify-content: center;
     text-align: left;
-    padding-left: 40px; /* Reduce left padding */
-    width: 30%; /* Reduce width from 40% to 30% */
-    position: fixed; /* Keep fixed positioning */
-    top: 50%; /* Keep vertical centering */
-    right: 5%; /* Adjust right position */
-    transform: translateY(-50%); /* Keep vertical centering */
-    height: auto; /* Keep auto height */
-    z-index: 100; /* Keep z-index */
+    padding-left: 40px;
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    height: auto;
+    z-index: 100;
 }
 
 #menu ul {
@@ -106,28 +127,28 @@ section h2 {
 
 #menu-prev {
     margin-bottom: 10vh;
-    color: black;
+    color: var(--color-text);
 }
 
 #menu-prev ul a {
     text-decoration: none;
-    color: gray;
+    color: var(--color-text-muted);
 }
 
 #menu-next ul li a {
-    color: darkred;
+    color: var(--color-accent);
 }
 
 /* Cursor */
 
 #type {
-    color: darkred;
+    color: var(--color-accent);
     font-weight: bold;
 }
 
 #cursor {
     font-size: 1.5em;
-    color: darkred;
+    color: var(--color-accent);
     animation: 1s blink step-end infinite;
 }
 
@@ -136,6 +157,6 @@ section h2 {
         color: transparent;
     }
     50% {
-        color: black;
+        color: var(--color-text);
     }
 }
