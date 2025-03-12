@@ -14,9 +14,9 @@
     --spacing-large: 40px;
 }
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 body {
     font-family: var(--font-primary);
