@@ -1,6 +1,9 @@
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   entry: { index: './src/index.js' },
@@ -9,6 +12,11 @@ module.exports = {
       title: 'Dana Moldovan',
       favicon: './src/favicon.ico',
       template: './src/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/images', to: 'images' },
+      ],
     }),
   ],
   output: {
