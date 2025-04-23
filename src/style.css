@@ -5,6 +5,7 @@
     --color-accent-light: #fdf7f7;
     --color-background: white;
     --color-text-muted: gray;
+    --color-underline: blue;
     
     /* Font variables */
     --font-primary: Avenir, sans-serif;
@@ -180,4 +181,10 @@ section.active h2 {
     50% {
         color: var(--color-text);
     }
+}
+
+.word-highlight {
+    /* background-image:linear-gradient(90deg, rgba(255,255,0,0.7) 50%, rgba(255,255,0,0.5) 100%); */
+    background-image:linear-gradient(90deg, rgba(255, 64, 0, 0.7) 50%, rgba(255, 106, 0, 0.5) 100%); 
+    border-radius: 2px;
 }
