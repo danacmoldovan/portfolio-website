@@ -184,7 +184,9 @@ section.active h2 {
 }
 
 .word-highlight {
-    /* background-image:linear-gradient(90deg, rgba(255,255,0,0.7) 50%, rgba(255,255,0,0.5) 100%); */
-    background-image:linear-gradient(90deg, rgba(255, 64, 0, 0.7) 50%, rgba(255, 106, 0, 0.5) 100%); 
-    border-radius: 2px;
+    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.4), rgba(255, 255, 0, 0.6));
+    background-repeat: no-repeat;
+    background-size: 100% 0.6em; /* Thickness of the 'marker' stroke */
+    background-position: 0 90%; /* Position towards the bottom */
+    padding: 0 2px;
 }
