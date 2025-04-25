@@ -6,6 +6,7 @@
     --color-background: white;
     --color-text-muted: gray;
     --color-underline: blue;
+    --color-highlight-marker: rgba(255, 255, 0, 0.4);
     
     /* Font variables */
     --font-primary: Avenir, sans-serif;
@@ -56,23 +57,18 @@ section {
 
 .subtitle {
     font-size: 1.2rem;
-    color: var(--color-text-muted);
-    padding: 1vh 0 8vh 0;
+    color: var(--color-text);
+    font-weight: bolder;
+    font-size: 1.5rem; 
+    padding: 1vh 0 0.5vh 0;
     text-align: left;
 }
 
-hr {
-    border: none;
-    height: 1px;
-    background-color: #ededed;
-    margin-bottom: 4vh;
-    margin-top: -70px;
-  }
 
 .list {
     list-style-type: none;
     padding-left: 2vh;
-    border-left: var(--color-accent) 4px solid;
+    border-left: var(--color-accent) 2px solid;
 }
 
 .list li {
@@ -109,6 +105,19 @@ section h2 {
 section.active h2 {
     color: var(--color-accent);
 }
+
+/* Style for the work-item groups */
+.work-item {
+    margin-bottom: 2rem; /* Add spacing between groups */
+  }
+  
+  /* Style for the divider line */
+  section#samples hr {
+    border: none;
+    height: 1px;
+    background-color: darkred; opacity: 10%; 
+    margin: 1.5rem 0; /* Add spacing around the divider */
+  }
 
 /* Menu */
 
