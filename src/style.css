@@ -1,25 +1,185 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 50px;
-    text-align: center;
+:root {
+    /* Color variables */
+    --color-text: #333333;
+    --color-accent: darkred;
+    --color-accent-light: #fdf7f7;
+    --color-background: white;
+    --color-text-muted: gray;
+    --color-underline: blue;
+    --color-highlight-marker: rgba(255, 255, 0, 0.4);
+    
+    /* Font variables */
+    --font-primary: Avenir, sans-serif;
+    
 }
 
-header, footer {
-    background-color: #f8f9fa;
+.invisible {
+    opacity: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 26px;
+    padding: 5vh 10vh 5vh 10vh;
+    text-align: left;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* border: 1px dotted blue; */
 }
 
 #content {
-    padding-top: 10vh;
+    width: 60%;
+    padding-top: 4vh;
+    padding-right: 5%;
+    /* border: 1px dotted red; */
 }
 
+section {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 20px;
+    margin-top: 10vh;
+    /* text-align: justify; */
+    opacity: 1;
+    transition: opacity 1s ease;
+    /* border: 1px dotted green; */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: bolder;
+    font-size: 1.5rem; 
+    padding: 1vh 0 0.5vh 0;
+    text-align: left;
+}
+
+
+.list {
+    list-style-type: none;
+    padding-left: 2vh;
+    border-left: var(--color-accent) 2px solid;
+}
+
+.list li {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+section:nth-of-type(1) {
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+    font-size: 2rem;
+    text-align: left;
+}
+
+section:nth-last-of-type(1) {
+    margin-bottom: 40vh;
+}
+
+
+section.faded {
+    opacity: 0.1;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    /* text-decoration: underline; */
+}
+
+section.active h2 {
+    color: var(--color-accent);
+}
+
+/* Style for the work-item groups */
+.work-item {
+    margin-bottom: 2rem; /* Add spacing between groups */
+  }
+  
+  /* Style for the divider line */
+  section#samples hr {
+    border: none;
+    height: 1px;
+    background-color: darkred; opacity: 10%; 
+    margin: 1.5rem 0; /* Add spacing around the divider */
+  }
+
+/* Menu */
+
+#menu {
+    /* border: 1px dotted orange; */
+    width: 30%;
+    flex: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-left: 40px;
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    height: auto;
+    z-index: 100;
+}
+
+#menu ul {
+    list-style-type: none;
+}
+
+#menu ul li {
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-size: 2rem;
+}
+
+#menu li.active a {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#menu li.prev a {
+    color: var(--color-text-muted);
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#menu li.next a {
+    color: var(--color-accent);
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Cursor */
+
 #type {
-    color: darkred;
-    font-weight: bold;
+    color: var(--color-accent);
+    /* font-weight: bold; */
 }
 
 #cursor {
-    font-size: 1.5em;
-    color: darkred;
+    /* font-size: 1.5em; */
+    color: var(--color-accent);
     animation: 1s blink step-end infinite;
 }
 
@@ -28,6 +188,14 @@ header, footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: var(--color-text);
     }
+}
+
+.word-highlight {
+    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.4), rgba(255, 255, 0, 0.6));
+    background-repeat: no-repeat;
+    background-size: 100% 0.6em; /* Thickness of the 'marker' stroke */
+    background-position: 0 90%; /* Position towards the bottom */
+    padding: 0 2px;
 }
