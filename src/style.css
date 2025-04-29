@@ -67,13 +67,13 @@ section {
 
 .list {
     list-style-type: none;
-    padding-left: 2vh;
-    border-left: var(--color-accent) 2px solid;
+    padding-left: 1vh;
+    border-left: var(--color-accent) 2px solid; 
 }
 
 .list li {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding-bottom: 0.4vh;
+    padding-top: 0.4vh;
 }
 
 section:nth-of-type(1) {
