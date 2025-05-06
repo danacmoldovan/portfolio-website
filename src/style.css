@@ -55,6 +55,23 @@ section {
     /* border: 1px dotted green; */
 }
 
+#new-section {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 2px solid #ddd; /* Optional border to separate it visually */
+  }
+  
+  #new-section h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  #new-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+  }
 .subtitle {
     font-size: 1.2rem;
     color: var(--color-text);

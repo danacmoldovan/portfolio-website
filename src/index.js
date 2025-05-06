@@ -221,3 +221,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Call once on page load to set initial state
   activateSection();
 });
+
