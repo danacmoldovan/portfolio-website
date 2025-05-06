@@ -55,23 +55,6 @@ section {
     /* border: 1px dotted green; */
 }
 
-#new-section {
-    background-color: #f9f9f9; /* Light background color */
-    padding: 2rem;
-    margin-top: 2rem;
-    border-top: 2px solid #ddd; /* Optional border to separate it visually */
-  }
-  
-  #new-section h2 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  #new-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-  }
 .subtitle {
     font-size: 1.2rem;
     color: var(--color-text);
@@ -80,7 +63,6 @@ section {
     padding: 1vh 0 0.5vh 0;
     text-align: left;
 }
-
 
 .list {
     list-style-type: none;
@@ -153,6 +135,8 @@ section.active h2 {
     transform: translateY(-50%);
     height: auto;
     z-index: 100;
+    transition: opacity 0.7s ease;
+    opacity: 1;
 }
 
 #menu ul {
@@ -215,4 +199,10 @@ section.active h2 {
     background-size: 100% 0.6em; /* Thickness of the 'marker' stroke */
     background-position: 0 90%; /* Position towards the bottom */
     padding: 0 2px;
+}
+
+/* Utility class to hide the menu */
+.menu-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }

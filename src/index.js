@@ -143,6 +143,14 @@ function changeActiveSection(currentlyActiveSection, idOfSectionThatShouldBeActi
     sectionThatShouldBeActive.classList.remove('faded');
     sectionThatShouldBeActive.classList.remove('invisible');
     console.log('Activated section:', idOfSectionThatShouldBeActive);
+
+    // Hide menu if section has 'full-screen-section' class, otherwise show menu
+    const menuElement = document.getElementById('menu');
+    if (sectionThatShouldBeActive.classList.contains('full-screen-section')) {
+      menuElement.classList.add('menu-hidden');
+    } else {
+      menuElement.classList.remove('menu-hidden');
+    }
   }
 
   // Update the menu

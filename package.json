@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open --config webpack.dev.js",
+    "start": "webpack serve --open --config webpack.dev.js --port 3002",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint . --fix"
   },
