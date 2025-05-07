@@ -1,4 +1,4 @@
-const words = ['learnings.', 'insights.', 'stories.'];
+const words = ['learnings.', 'insights.', 'my story.'];
 let targetElement;
 let wordIndex = 0;
 let charIndex = 0;

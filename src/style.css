@@ -64,6 +64,28 @@ section {
     text-align: left;
 }
 
+.work-item {
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .work-item-content {
+    font-size: 1.2rem;
+    /* flex: 1; */
+    padding-right: 1rem; /* Add spacing between text and image */
+  }
+  
+  .work-item-image {
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+    width: 400px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+  }
+
 .list {
     list-style-type: none;
     padding-left: 1vh;
@@ -104,19 +126,6 @@ section h2 {
 section.active h2 {
     color: var(--color-accent);
 }
-
-/* Style for the work-item groups */
-.work-item {
-    margin-bottom: 2rem; /* Add spacing between groups */
-  }
-  
-  /* Style for the divider line */
-  section#samples hr {
-    border: none;
-    height: 1px;
-    background-color: darkred; opacity: 10%; 
-    margin: 1.5rem 0; /* Add spacing around the divider */
-  }
 
 /* Menu */
 
