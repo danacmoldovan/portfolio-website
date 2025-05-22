@@ -230,3 +230,33 @@ document.addEventListener('DOMContentLoaded', () => {
   activateSection();
 });
 
+// Get elements
+const popupModal = document.getElementById("popup-modal");
+const openPopup = document.getElementById("open-popup");
+const closePopup = document.getElementById("close-popup");
+
+// Open the pop-up
+openPopup.addEventListener("click", function (e) {
+  e.preventDefault(); // Prevent default link behavior
+  popupModal.style.display = "flex"; // Show the modal
+});
+
+// Close the pop-up
+closePopup.addEventListener("click", function () {
+  popupModal.style.display = "none"; // Hide the modal
+});
+
+// Close the pop-up when clicking outside the content
+window.addEventListener("click", function (e) {
+  if (e.target === popupModal) {
+    popupModal.style.display = "none"; // Hide the modal
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+
+  // Simulate a delay for demonstration purposes (optional)
+  setTimeout(() => {
+    loader.classList.add("hidden"); // Hide the loader
+  }, 1000); // Adjust the delay as needed
+});

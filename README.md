@@ -16,3 +16,6 @@ npm run start
 # Build for production
 npm run build
 ```
+
+# Go to portfolio website 
+cd portfolio-website 
