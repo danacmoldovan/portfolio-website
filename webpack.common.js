@@ -4,14 +4,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
-  entry: { index: './src/index.js' },
+  entry: { index: './src/js/index.js', showcase: './src/js/showcase.js' },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Dana Moldovan',
       favicon: './src/favicon.ico',
       template: './src/index.html',
+      filename: 'index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Dana Moldovan - Showcases - Monitoring Dashboards',
+      template: './src/showcase-monitoring-dashboards.html',
+      filename: 'showcases-monitoring-dashboards.html',
+      chunks: ['showcase'],
     }),
     new CopyWebpackPlugin({
       patterns: [

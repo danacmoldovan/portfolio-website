@@ -1,0 +1,23 @@
+:root {
+    /* Color variables */
+    --color-text: #333333;
+    --color-accent: darkred;
+    --color-accent-light: #fdf7f7;
+    --color-background: white;
+    --color-text-muted: gray;
+    --color-underline: blue;
+    --color-highlight-marker: rgba(255, 255, 0, 0.4);
+
+    /* Font variables */
+    --font-primary: Avenir, sans-serif;
+
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 26px;
+    padding: 5vh 10vh 5vh 10vh;
+    text-align: left;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
