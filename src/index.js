@@ -144,13 +144,20 @@ function changeActiveSection(currentlyActiveSection, idOfSectionThatShouldBeActi
     sectionThatShouldBeActive.classList.remove('invisible');
     console.log('Activated section:', idOfSectionThatShouldBeActive);
 
-    // Hide menu if section has 'full-screen-section' class, otherwise show menu
+    // Hide menu if section has 'showcase-item' class, otherwise show menu
     const menuElement = document.getElementById('menu');
-    if (sectionThatShouldBeActive.classList.contains('full-screen-section')) {
-      menuElement.classList.add('menu-hidden');
-    } else {
+    const showcasesNav = document.getElementById('showcases-nav');
+    if (sectionThatShouldBeActive.classList.contains('showcase-item')) {
+      menuElement.classList.add('menu-horizontal');
       menuElement.classList.remove('menu-hidden');
+      showcasesNav.classList.add('visible');
+    } else {
+      menuElement.classList.remove('menu-horizontal');
+      menuElement.classList.remove('menu-hidden');
+      showcasesNav.classList.remove('visible');
     }
+  } else {
+    console.warn('Section not found:', idOfSectionThatShouldBeActive);
   }
 
   // Update the menu
@@ -192,7 +199,11 @@ function buildMenu() {
 
   // Add menu items for each section
   sections.forEach((section) => {
-    if (section.heading.textContent === 'Me' || section.heading.classList.contains('invisible')) {
+    if (
+      section.heading.textContent === 'Me'
+      || section.heading.classList.contains('invisible')
+      || section.element.classList.contains('showcase-item')
+    ) {
       return;
     }
 
@@ -212,6 +223,36 @@ function buildMenu() {
     // Append list item to menu
     menuList.appendChild(listItem);
   });
+
+  // --- Build showcases-nav ---
+  const showcasesNav = document.getElementById('showcases-nav');
+  if (showcasesNav) {
+    showcasesNav.innerHTML = '';
+
+    const showcaseItems = document.querySelectorAll('.showcase-item');
+    if (showcaseItems.length > 0) {
+      const navList = document.createElement('ul');
+      showcaseItems.forEach((item, idx) => {
+        const showcaseTitle = item.querySelector('h2')?.textContent?.trim() || `Showcase ${idx + 1}`;
+        const showcaseId = item.id || `showcase-item-${idx}`;
+        item.setAttribute('id', showcaseId);
+        const navLi = document.createElement('li');
+        const navA = document.createElement('a');
+        navA.href = `#${showcaseId}`;
+        navA.textContent = showcaseTitle;
+        navA.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.getElementById(showcaseId);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+        navLi.appendChild(navA);
+        navList.appendChild(navLi);
+      });
+      showcasesNav.appendChild(navList);
+    }
+  }
 
   console.log('Menu built with', sections.length, 'items');
 }

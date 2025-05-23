@@ -64,7 +64,7 @@ section {
     text-align: left;
 }
 
-.work-item {
+.showcase-item {
     /* display: flex; */
     align-items: center;
     justify-content: space-between;
@@ -72,7 +72,7 @@ section {
     margin-bottom: 2rem;
 }
 
-.work-item-content {
+.showcase-item-content {
     position: relative;
     /* Ensure the text stays above the image */
     z-index: 2;
@@ -80,16 +80,16 @@ section {
     /* background-color: rgba(255, 255, 255, 0.8); Optional: Add a background color to the text */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); 
     /* Gradient fade effect */
-    padding: 1rem;
+    /* padding: 1rem; */
     font-size: 1.2rem;
-    width: 60%;
+    /* width: 60%; */
     /* Adjust the width as needed */
     /* flex: 1; */
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
     /* Add spacing between text and image */
 }
 
-.work-item-image {
+.showcase-item-image {
     position: absolute;
     /* Position the image absolutely within the container */
     top: 0;
@@ -237,4 +237,114 @@ section.active h2 {
 .menu-hidden {
     opacity: 0 !important;
     pointer-events: none !important;
+}
+
+/* Horizontal menu style for showcase-item view */
+#menu.menu-horizontal {
+  width: 100vw;
+  max-width: 100vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  transform: none;
+  position: fixed;
+  padding: 0 0 0 0;
+  background: var(--color-background);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+#menu.menu-horizontal ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#menu.menu-horizontal ul li {
+  display: inline-block;
+  padding: 0 2vw;
+  margin: 0;
+}
+#menu.menu-horizontal ul li a {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  padding: 1.2em 0.5em;
+  display: block;
+}
+#menu.menu-horizontal li.active a {
+  color: var(--color-accent);
+  opacity: 1;
+}
+#menu.menu-horizontal li.prev a,
+#menu.menu-horizontal li.next a {
+  opacity: 0.7;
+}
+@media (max-width: 700px) {
+  #menu.menu-horizontal ul li {
+    padding: 0 1vw;
+  }
+  #menu.menu-horizontal ul li a {
+    font-size: 1rem;
+    padding: 1em 0.2em;
+  }
+}
+
+/* Showcases navigation (bottom sticky) */
+#showcases-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  background: var(--color-background);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  padding: 0.5em 0;
+}
+#showcases-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#showcases-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#showcases-nav li {
+  display: inline-block;
+}
+#showcases-nav a {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.7em 1.2em;
+  border-radius: 2em;
+  transition: background 0.2s, color 0.2s;
+  background: none;
+}
+#showcases-nav a:hover {
+  color: var(--color-accent);
+}
+@media (max-width: 700px) {
+  #showcases-nav a {
+    font-size: 0.9rem;
+    padding: 0.5em 0.7em;
+  }
 }
