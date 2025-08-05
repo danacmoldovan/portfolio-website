@@ -1,3 +1,4 @@
+
 @import './base.css';
 
 .invisible {
@@ -12,11 +13,11 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    /* border: 1px dotted blue; */
+    border: 1px dotted blue; 
 }
 
 #content {
-    width: 60%;
+    width: 80%;
     padding-top: 4vh;
     padding-right: 5%;
     /* border: 1px dotted red; */
@@ -31,46 +32,6 @@ section {
     opacity: 1;
     transition: opacity 1s ease;
     /* border: 1px dotted green; */
-}
-
-.showcase-item {
-    /* display: flex; */
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.showcase-item-content {
-    position: relative;
-    /* Ensure the text stays above the image */
-    z-index: 2;
-    /* Place the text above the image */
-    /* background-color: rgba(255, 255, 255, 0.8); Optional: Add a background color to the text */
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); 
-    /* Gradient fade effect */
-    /* padding: 1rem; */
-    font-size: 1.2rem;
-    /* width: 60%; */
-    /* Adjust the width as needed */
-    /* flex: 1; */
-    /* padding-right: 1rem; */
-    /* Add spacing between text and image */
-}
-
-.showcase-item-image {
-    position: absolute;
-    /* Position the image absolutely within the container */
-    top: 0;
-    right: 0;
-    width: 50%;
-    /* Adjust the width as needed */
-    height: 100%;
-    /* Make the image cover the height of the container */
-    object-fit: cover;
-    /* Ensure the image maintains its aspect ratio */
-    z-index: 1;
-    /* Place the image behind the text */
 }
 
 .list {
@@ -114,11 +75,36 @@ section.active h2 {
     color: var(--color-accent);
 }
 
+/* Design process ordered list styling */
+
+.process-list {
+  padding-left: 0;
+  counter-reset: none;
+  gap: 0em;
+  width: fit-content;
+}
+.process-list li {
+  position: relative;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+.process-title {
+  font-weight: 500;
+  color: var(--color-accent, #0078d4);
+  margin-bottom: -1em;
+}
+.process-desc {
+  margin-left: 0em;
+}
+
 /* Menu */
 
 #menu {
     /* border: 1px dotted orange; */
-    width: 30%;
+    width: 20%;
     flex: none;
     display: flex;
     flex-direction: column;
@@ -147,7 +133,7 @@ section.active h2 {
 #menu ul li a {
     text-decoration: none;
     color: var(--color-text-muted);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #menu li.active a {
@@ -165,6 +151,14 @@ section.active h2 {
     color: var(--color-accent);
     opacity: 1;
     transition: opacity 1s ease;
+}
+
+/* Intro */
+#intro {
+    font-size: 2.5rem;
+    line-height: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 /* Cursor */
@@ -190,20 +184,4 @@ section.active h2 {
     50% {
         color: var(--color-text);
     }
-}
-
-.word-highlight {
-    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.4), rgba(255, 255, 0, 0.6));
-    background-repeat: no-repeat;
-    background-size: 100% 0.6em;
-    /* Thickness of the 'marker' stroke */
-    background-position: 0 90%;
-    /* Position towards the bottom */
-    padding: 0 2px;
-}
-
-/* Utility class to hide the menu */
-.menu-hidden {
-    opacity: 0 !important;
-    pointer-events: none !important;
 }
