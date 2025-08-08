@@ -225,3 +225,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // Call once on page load to set initial state
   activateSection();
 });
+
+// Showcase overlay logic
+const craftBtn = document.getElementById('craft-btn');
+const vibeBtn = document.getElementById('vibe-btn');
+const showcaseCraft = document.getElementById('showcase-craft');
+const showcaseVibe = document.getElementById('showcase-vibe');
+const closeCraftBtn = document.getElementById('closeShowcaseCraftBtn');
+const closeVibeBtn = document.getElementById('closeShowcaseVibeBtn');
+
+if (craftBtn && showcaseCraft) {
+  craftBtn.addEventListener('click', () => {
+    showcaseCraft.classList.add('active');
+  });
+}
+
+if (vibeBtn && showcaseVibe) {
+  vibeBtn.addEventListener('click', () => {
+    showcaseVibe.classList.add('active');
+  });
+}
+
+if (closeCraftBtn && showcaseCraft) {
+  closeCraftBtn.addEventListener('click', () => {
+    showcaseCraft.classList.remove('active');
+  });
+}
+
+if (closeVibeBtn && showcaseVibe) {
+  closeVibeBtn.addEventListener('click', () => {
+    showcaseVibe.classList.remove('active');
+  });
+}
+
+
+
