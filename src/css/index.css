@@ -1,6 +1,7 @@
 
 @import './base.css';
 
+
 .invisible {
     opacity: 0;
 }
@@ -24,7 +25,7 @@
 }
 
 section {
-    font-size: 1.2rem;
+    font-size: var(--font-size, inherit);
     line-height: 1.8;
     padding: 20px;
     margin-top: 10vh;
@@ -38,11 +39,19 @@ section {
     list-style-type: none;
     padding-left: 1vh;
     border-left: var(--color-accent) 2px solid;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 .list li {
-    padding-bottom: 0.4vh;
-    padding-top: 0.4vh;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 0.4em;
+    line-height: 1.5;
 }
 
 .text-btn {
@@ -121,14 +130,17 @@ section.active h2 {
   width: 90vw;
   max-width: 100vw;
   height: 100vh;
-  background: #fff;
-  box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+  background: var(--color-bg, #fff);
+  box-shadow: var(--box-shadow-overlay, -4px 0 24px rgba(0,0,0,0.12));
+  font-family: var(--font-family, inherit);
+  font-size: var(--font-size, inherit);
   z-index: 9999;
   transform: translateX(100%);
   transition: transform 3s cubic-bezier(0.95, 0.05, 0.25, 1);
   display: none;
   flex-direction: column;
-  padding: 2em;
+  padding: var(--space-xl, 2em);
+  overflow-y: auto;
 }
 
 .showcase.active {
@@ -150,31 +162,137 @@ section.active h2 {
 
 .showcase-content {
   margin-top: 3em;
+  margin-bottom: 3em;
 }
 
-/* Design process ordered list styling */
-
-.process-list {
-  padding-left: 0;
-  counter-reset: none;
-  gap: 0em;
-  width: fit-content;
+.showcase-section {
+    min-height: 75vh;
+    align-content: top;
+    padding-top: 8em;
+    scroll-snap-align: start;
 }
-.process-list li {
+
+
+/* Horizontal timeline styling */
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 3em 0;
   position: relative;
-  list-style-position: inside;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 2.2em;
+  left: 0;
+  right: 0;
+  height: 4px;
+  /* background: var(--color-accent, darkred); */
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.process-timeline li {
+  position: relative;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 2em;
+  align-items: center;
+  min-width: 120px;
+  max-width: 220px;
+  padding: 0 1em;
+  background: none;
+  box-shadow: none;
 }
+
+.process-dot-container {
+  height: 4em; /* match largest dot size */
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+}
+
+.process-timeline li .process-dot {
+  /* Default size (M) */
+  width: 2em;
+  height: 2em;
+  background: var(--color-highlight-marker, #ffe066);
+  border: 1px solid var(--color-accent, darkred);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.4em;
+}
+
+/* Step 1 and 5: Small */
+.process-timeline li:first-child .process-dot,
+.process-timeline li:last-child .process-dot {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+/* Step 2 and 4: Medium (default, but explicit for clarity) */
+.process-timeline li:nth-child(2) .process-dot,
+.process-timeline li:nth-child(4) .process-dot {
+  width: 2.4em;
+  height: 2.4em;
+}
+
+/* Step 3: Large */
+.process-timeline li:nth-child(3) .process-dot {
+  width: 3.8em;
+  height: 3.8em;
+}
+
 .process-title {
-  font-weight: 500;
-  color: var(--color-accent, #0078d4);
-  margin-bottom: -1em;
+  font-weight: 400;
+  color: var(--color-accent, darkred);
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
+
 .process-desc {
-  margin-left: 0em;
+  font-size: 1em;
+  color: #555;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .process-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .process-timeline::before {
+    top: 2em;
+    left: 2em;
+    width: 4px;
+    height: 100%;
+    right: auto;
+  }
+  .process-timeline li {
+    flex-direction: row;
+    align-items: center;
+    min-width: unset;
+    max-width: unset;
+    margin-bottom: 2em;
+    padding: 0;
+  }
+  .process-dot {
+    margin-right: 1em;
+    margin-bottom: 0;
+  }
+  .process-title, .process-desc {
+    text-align: left;
+  }
 }
 
 /* Menu */
